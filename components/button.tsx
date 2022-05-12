@@ -10,11 +10,12 @@ const ButtonContainer = styled.div`
   padding: 0.5rem 1rem;
   color: ${({ theme }) => theme.color.button.text.primary};
   background-color: ${({ theme }) => theme.color.button.background.primary};
-  border-radius: 8px;
+  border-radius: 0.2rem;
   display: flex;
   justify-content: center;
   width: 22rem;
   cursor: pointer;
+  font-size: 1.5rem;
 `
 
 export const Button: React.FC<IButton> = ({ onClick, children }) => {
