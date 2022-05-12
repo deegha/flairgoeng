@@ -1,16 +1,99 @@
 import type { NextPage } from 'next'
-import { Layout } from 'components'
+import { Layout, BoldTitle, Header4, Header5 } from 'components'
+import Image from 'next/image'
 import styled from 'styled-components'
 
-const Container = styled.div`
-  width: 100hvw;
+import mobile from '/assets/mobile.svg'
+import computer from '/assets/computer.svg'
+import user from '/assets/user.svg'
+
+const ServicesContainer = styled.div`
   padding: 2rem;
+  width: 65%;
+`
+
+const ServicesCollection = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 6.25rem;
+`
+
+const Service = styled.div`
+  width: 18rem;
+`
+const ImgContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`
+
+const HeadingContainer = styled(BoldTitle)`
+  margin-top: 8.9%;
+`
+
+const ServiceTitle = styled(Header4)`
+  margin-top: 2rem;
+`
+
+const ServiceDesc = styled(Header5)`
+  margin-top: 2rem;
 `
 
 const Services: NextPage = () => {
   return (
     <Layout title="Flairgo | Services" metaContent="" metaDiscription="">
-      <Container>this is the about us page</Container>
+      <ServicesContainer>
+        <HeadingContainer>Our Services</HeadingContainer>
+        <ServicesCollection>
+          <Service>
+            <ImgContainer>
+              <Image
+                src={mobile}
+                width={135}
+                height={135}
+                alt="Picture of Mobile Phone"
+              />
+            </ImgContainer>
+            <ServiceTitle>Cross Platform Mobile Applications</ServiceTitle>
+            <ServiceDesc>
+              We build mobile applications that function on both iOS and
+              Android.
+            </ServiceDesc>
+          </Service>
+          <Service>
+            <ImgContainer>
+              <Image
+                src={computer}
+                width={135}
+                height={135}
+                alt="Picture of Computer"
+              />
+            </ImgContainer>
+            <ServiceTitle>Web Applications</ServiceTitle>
+            <ServiceDesc>
+              We build mobile applications that function on both iOS and
+              Android.
+            </ServiceDesc>
+          </Service>
+          <Service>
+            <ImgContainer>
+              <Image
+                src={user}
+                width={135}
+                height={135}
+                alt="Picture of Consultants"
+              />
+            </ImgContainer>
+            <ServiceTitle>Front-End Consultancy</ServiceTitle>
+            <ServiceDesc>
+              We build mobile applications that function on both iOS and
+              Android.
+            </ServiceDesc>
+          </Service>
+        </ServicesCollection>
+      </ServicesContainer>
     </Layout>
   )
 }

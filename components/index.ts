@@ -28,3 +28,10 @@ export const Header4 = styled.h1`
   color: ${({ theme }) => theme.color.light};
   margin: 0;
 `
+
+export const Header5 = styled.h1`
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  color: ${({ theme }) => theme.color.light};
+`
