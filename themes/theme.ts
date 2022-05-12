@@ -15,6 +15,13 @@ declare module 'styled-components' {
           primary: string
         }
       }
+      textInput: {
+        border: {
+          default: string
+          error: string
+          selected: string
+        }
+      }
     }
   }
 }
