@@ -49,7 +49,12 @@ const Services: NextPage = () => {
         <ServicesCollection>
           <Service>
             <ImgContainer>
-              <Image src={mobile} width={135} height={135} />
+              <Image
+                src={mobile}
+                width={135}
+                height={135}
+                alt="Picture of Mobile Phone"
+              />
             </ImgContainer>
             <ServiceTitle>Cross Platform Mobile Applications</ServiceTitle>
             <ServiceDesc>
@@ -59,7 +64,12 @@ const Services: NextPage = () => {
           </Service>
           <Service>
             <ImgContainer>
-              <Image src={computer} width={135} height={135} />
+              <Image
+                src={computer}
+                width={135}
+                height={135}
+                alt="Picture of Computer"
+              />
             </ImgContainer>
             <ServiceTitle>Web Applications</ServiceTitle>
             <ServiceDesc>
@@ -69,7 +79,12 @@ const Services: NextPage = () => {
           </Service>
           <Service>
             <ImgContainer>
-              <Image src={user} width={135} height={135} />
+              <Image
+                src={user}
+                width={135}
+                height={135}
+                alt="Picture of Consultants"
+              />
             </ImgContainer>
             <ServiceTitle>Front-End Consultancy</ServiceTitle>
             <ServiceDesc>
