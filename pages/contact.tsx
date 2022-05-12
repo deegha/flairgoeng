@@ -29,6 +29,13 @@ interface IInputs {
   message: string
 }
 
+interface IInputErrors {
+  firstName: boolean
+  lastName: boolean
+  email: boolean
+  message: boolean
+}
+
 const Contact: NextPage = () => {
   const [inputs, setInputs] = useState<IInputs>({
     firstName: '',
@@ -37,16 +44,50 @@ const Contact: NextPage = () => {
     message: '',
   })
 
+  const [errors, setErrors] = useState<IInputErrors>({
+    firstName: false,
+    lastName: false,
+    email: false,
+    message: false,
+  })
+
   const handleOnChange = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
+    const name = e.target.name as 'firstName' | 'lastName' | 'email' | 'message'
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: false,
+      })
+    }
+
     setInputs({
       ...inputs,
-      [e.target.name]: e.target.value,
+      [name]: e.target.value,
     })
   }
 
   const handleForm = () => {
+    Object.keys(inputs).map((index) => {
+      const i = index as 'firstName' | 'lastName' | 'email' | 'message'
+      if (inputs[i] === '') {
+        setErrors({
+          ...errors,
+          [i]: true,
+        })
+      }
+    })
+
+    if (
+      !errors.firstName ||
+      !errors.lastName ||
+      !errors.email ||
+      !errors.message
+    ) {
+      return
+    }
+
     console.log('submitted')
   }
 
@@ -58,14 +99,14 @@ const Contact: NextPage = () => {
           <TextInput
             placeholder="First name"
             value={inputs.firstName}
-            state="default"
+            state={errors.firstName ? 'error' : 'default'}
             name="firstName"
             onChange={handleOnChange}
           />
           <TextInput
             placeholder="Last name"
             value={inputs.lastName}
-            state="default"
+            state={errors.lastName ? 'error' : 'default'}
             name="lastName"
             onChange={handleOnChange}
           />
@@ -74,7 +115,7 @@ const Contact: NextPage = () => {
           <TextInput
             placeholder="Email"
             value={inputs.email}
-            state="default"
+            state={errors.email ? 'error' : 'default'}
             name="email"
             onChange={handleOnChange}
           />
@@ -83,14 +124,14 @@ const Contact: NextPage = () => {
           <TextArea
             placeholder="Say hello"
             value={inputs.message}
-            state="default"
+            state={errors.message ? 'error' : 'default'}
             name="message"
             onChange={handleOnChange}
           />
         </FormRow>
         <FormRow>
           <SceduleBtn>
-            <Button onClick={handleForm}>Scedule a session</Button>
+            <Button onClick={handleForm}>Schedule a session</Button>
           </SceduleBtn>
         </FormRow>
       </Container>

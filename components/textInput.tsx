@@ -14,7 +14,7 @@ interface IProps {
 
 const Container = styled.div<{ state: TState }>`
   border-radius: 0.2rem;
-  border: 1px solid ${({ theme, state }) => theme.color.textInput.border[state]};
+  border: 2px solid ${({ theme, state }) => theme.color.textInput.border[state]};
   overflow: hidden;
   width: 100%;
   margin: 1rem;
