@@ -14,6 +14,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 22rem;
+  font-size: 1.5rem;
   cursor: pointer;
   font-size: 1.5rem;
 `

@@ -14,6 +14,7 @@ const Logo = styled(BoldTitle)`
 const Title = styled(BoldTitle)`
   margin-bottom: 2.8%;
 `
+
 const Home: NextPage = () => {
   return (
     <Layout title="Flairgo | a tech company" metaContent="" metaDiscription="">

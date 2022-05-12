@@ -2,8 +2,10 @@ import styled from 'styled-components'
 
 export { Header } from './header'
 export { Navbar } from './navBar'
-export { Layout } from './layout/layout'
+export { Layout } from './layout'
 export { Button } from './button'
+export { TextInput } from './textInput'
+export { TextArea } from './textArea'
 
 export const BoldTitle = styled.h1`
   font-size: 5.1rem;
@@ -24,4 +26,5 @@ export const Header4 = styled.h1`
   font-weight: 500;
   margin: 0;
   color: ${({ theme }) => theme.color.light};
+  margin: 0;
 `
