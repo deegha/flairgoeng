@@ -1,11 +1,22 @@
 import type { NextPage } from 'next'
 import { Layout, BoldTitle, Header4, Header5 } from 'components'
 import Image from 'next/image'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import mobile from '/assets/mobile.svg'
 import computer from '/assets/computer.svg'
 import user from '/assets/user.svg'
+
+const slideIn = keyframes`
+  0% {
+    transform: translateY(-100);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+`
 
 const ServicesContainer = styled.div`
   padding: 2rem;
@@ -22,6 +33,8 @@ const ServicesCollection = styled.div`
 
 const Service = styled.div`
   width: 18rem;
+  animation-name: ${slideIn};
+  animation-duration: 2s;
 `
 const ImgContainer = styled.div`
   display: flex;

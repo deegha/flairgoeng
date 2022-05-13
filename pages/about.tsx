@@ -1,6 +1,17 @@
 import type { NextPage } from 'next'
 import { Layout, BoldTitle, Header3, Header4 } from 'components'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const slideIn = keyframes`
+  0% {
+    transform: translateY(-100);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+`
 
 const AboutContainer = styled.div`
   padding: 2rem;
@@ -12,6 +23,8 @@ const HeadingContainer = styled(BoldTitle)`
 `
 
 const Box = styled.div`
+  animation-name: ${slideIn};
+  animation-duration: 2s;
   width: 26.25rem;
   height: 21.875rem;
   border: 1px solid ${({ theme }) => theme.color.light};
@@ -26,6 +39,8 @@ const BoxContainer = styled.div`
   margin-top: 4rem;
   width: 100%;
   justify-content: space-around;
+  animation-name: ${slideIn};
+  animation-duration: 0.4s;
 `
 
 const BoxTopicContainer = styled(Header3)`

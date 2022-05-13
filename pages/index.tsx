@@ -1,7 +1,18 @@
 import type { NextPage } from 'next'
 import { Layout, BoldTitle, Button } from 'components'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { useRouter } from 'next/router'
+
+const slideIn = keyframes`
+  0% {
+    transform: translateY(-100);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+`
 
 const HomeContainer = styled.div`
   padding: 2rem;
@@ -25,6 +36,8 @@ const LowerText = styled.p`
   font-size: 0.875rem;
   letter-spacing: 0.125rem;
   color: #a4b0be;
+  animation-name: ${slideIn};
+  animation-duration: 3s;
 `
 
 const Home: NextPage = () => {

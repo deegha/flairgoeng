@@ -23,7 +23,7 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.9)
     ),
     url('https://res.cloudinary.com/duqpgdc9v/image/upload/v1652367567/flairgo-eng/flaigo-eng-bg.jpg');
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 `
 
