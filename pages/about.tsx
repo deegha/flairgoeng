@@ -15,6 +15,8 @@ const Box = styled.div`
   width: 26.25rem;
   height: 21.875rem;
   border: 1px solid ${({ theme }) => theme.color.light};
+  padding: 2rem;
+  text-align-center;
 `
 
 const BoxContainer = styled.div`
@@ -34,9 +36,10 @@ const BoxTopicContainer = styled(Header3)`
 `
 
 const BoxTextContainer = styled(Header4)`
-  text-align: justify;
-  padding-left: 3.375rem;
-  padding-right: 3.375rem;
+  text-align: center;
+  font-weight: 100;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
 `
 
 const AboutUs: NextPage = () => {

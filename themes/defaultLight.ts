@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components'
 
 const defaultColors = {
-  primary: '#AA14F0',
+  primary: '#7158e2',
   secondary: '#6C757D',
   light: '#FFFFFF',
   dark: '#343A40',
@@ -17,6 +17,7 @@ export const defaultLight: DefaultTheme = {
     secondary: defaultColors.secondary,
     light: defaultColors.light,
     dark: defaultColors.dark,
+    gray: defaultColors.gray1,
     button: {
       background: {
         primary: defaultColors.primary,

@@ -35,10 +35,14 @@ const HeadingContainer = styled(BoldTitle)`
 
 const ServiceTitle = styled(Header4)`
   margin-top: 2rem;
+  text-align: center;
 `
 
 const ServiceDesc = styled(Header5)`
   margin-top: 2rem;
+  text-align: center;
+  line-height: 1.6rem;
+  letter-spacing: 0.1rem;
 `
 
 const Services: NextPage = () => {
@@ -53,7 +57,7 @@ const Services: NextPage = () => {
                 src={mobile}
                 width={135}
                 height={135}
-                alt="Picture of Mobile Phone"
+                alt="Mobile app development"
               />
             </ImgContainer>
             <ServiceTitle>Cross Platform Mobile Applications</ServiceTitle>
@@ -68,7 +72,7 @@ const Services: NextPage = () => {
                 src={computer}
                 width={135}
                 height={135}
-                alt="Picture of Computer"
+                alt="Web development"
               />
             </ImgContainer>
             <ServiceTitle>Web Applications</ServiceTitle>
@@ -83,7 +87,7 @@ const Services: NextPage = () => {
                 src={user}
                 width={135}
                 height={135}
-                alt="Picture of Consultants"
+                alt="Fraont end consultancy"
               />
             </ImgContainer>
             <ServiceTitle>Front-End Consultancy</ServiceTitle>

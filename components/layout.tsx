@@ -17,7 +17,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
 
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 128, 0.2),
+      rgba(0, 0, 0, 0.9)
+    ),
     url('https://res.cloudinary.com/duqpgdc9v/image/upload/v1652367567/flairgo-eng/flaigo-eng-bg.jpg');
   height: 100vh;
   overflow: hidden;
@@ -29,6 +33,8 @@ const Page = styled.div`
   animation-name: ${slideIn};
   animation-duration: 0.4s;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 `
 

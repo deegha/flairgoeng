@@ -8,12 +8,23 @@ const HomeContainer = styled.div`
   width: 65%;
 `
 
+const LowerTextContainer = styled.div`
+  padding: 2rem;
+  width: 65%;
+`
+
 const Logo = styled(BoldTitle)`
   margin: 8.9% 0;
 `
 
 const Title = styled(BoldTitle)`
   margin-bottom: 2.8%;
+`
+
+const LowerText = styled.p`
+  font-size: 0.875rem;
+  letter-spacing: 0.125rem;
+  color: #a4b0be;
 `
 
 const Home: NextPage = () => {
@@ -28,6 +39,15 @@ const Home: NextPage = () => {
           Schedule a session
         </Button>
       </HomeContainer>
+
+      <LowerTextContainer>
+        <LowerText>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industrys standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has
+        </LowerText>
+      </LowerTextContainer>
     </Layout>
   )
 }
