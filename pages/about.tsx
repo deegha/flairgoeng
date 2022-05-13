@@ -44,7 +44,11 @@ const BoxTextContainer = styled(Header4)`
 
 const AboutUs: NextPage = () => {
   return (
-    <Layout title="Flairgo | about us" metaContent="" metaDiscription="">
+    <Layout
+      title="Flairgo | about us"
+      metaContent="description"
+      metaDiscription="Flairgo is a Sri Lankan tech statup which mainly focuses on web and mobile application development"
+    >
       <AboutContainer>
         <HeadingContainer>We are</HeadingContainer>
         <Header3>a software company blah blah</Header3>

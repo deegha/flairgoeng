@@ -47,7 +47,11 @@ const ServiceDesc = styled(Header5)`
 
 const Services: NextPage = () => {
   return (
-    <Layout title="Flairgo | Services" metaContent="" metaDiscription="">
+    <Layout
+      title="Flairgo | Services"
+      metaContent="description"
+      metaDiscription="Flairgo is a Sri Lankan tech statup which mainly focuses on web and mobile application development"
+    >
       <ServicesContainer>
         <HeadingContainer>Our Services</HeadingContainer>
         <ServicesCollection>

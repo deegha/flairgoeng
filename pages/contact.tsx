@@ -92,7 +92,11 @@ const Contact: NextPage = () => {
   }
 
   return (
-    <Layout title="Flairgo | contact us" metaContent="" metaDiscription="">
+    <Layout
+      title="Flairgo | contact us"
+      metaContent="description"
+      metaDiscription="Flairgo is a Sri Lankan tech statup which mainly focuses on web and mobile application development"
+    >
       <Container>
         <Heading>Contact us</Heading>
         <FormRow>

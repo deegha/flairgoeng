@@ -30,7 +30,11 @@ const LowerText = styled.p`
 const Home: NextPage = () => {
   const router = useRouter()
   return (
-    <Layout title="Flairgo | a tech company" metaContent="" metaDiscription="">
+    <Layout
+      title="Flairgo | a tech company"
+      metaContent="description"
+      metaDiscription="Flairgo is a Sri Lankan tech statup which mainly focuses on web and mobile application development"
+    >
       <HomeContainer>
         <Logo>Flairgo</Logo>
         <Title>We help you build technology</Title>
