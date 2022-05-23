@@ -8,12 +8,29 @@ declare module 'styled-components' {
       light: string
       dark: string
       gray: string
+      background: string
       button: {
         background: {
           primary: string
+          secondary: string
+          disabled: string
         }
         text: {
           primary: string
+          secondary: string
+          disabled: string
+        }
+        hover: {
+          background: {
+            primary: string
+            secondary: string
+            disabled: string
+          }
+          text: {
+            primary: string
+            secondary: string
+            disabled: string
+          }
         }
       }
       textInput: {
