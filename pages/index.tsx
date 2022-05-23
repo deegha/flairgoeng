@@ -1,70 +1,92 @@
 import type { NextPage } from 'next'
-import { Layout, BoldTitle, Button } from 'components'
-import styled, { keyframes } from 'styled-components'
-import { useRouter } from 'next/router'
+import { Layout, HoloItem } from 'components'
+import styled from 'styled-components'
 
-const slideIn = keyframes`
-  0% {
-    transform: translateY(-100);
-    opacity: 0;
+import { useState } from 'react'
+
+const Card = styled.div`
+  border-radius: 12px;
+  width: 530px;
+  height: 848px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4.25rem;
+  border: 4px solid #3a36ff;
+  backdrop-filter: blur(100px);
+
+  border-radius: 12px;
+
+  h2 {
+    font-family: 'Roc Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 88px;
+    font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
+    color: #ffffff;
+    font-family: 'RocGrotesk', sans-serif;
   }
 
-  100% {
-    transform: translateX(0);
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
+    color: #ffffff;
   }
 `
 
-const HomeContainer = styled.div`
-  padding: 2rem;
-  width: 65%;
-`
-
-const LowerTextContainer = styled.div`
-  padding: 2rem;
-  width: 65%;
-`
-
-const Logo = styled(BoldTitle)`
-  margin: 8.9% 0;
-`
-
-const Title = styled(BoldTitle)`
-  margin-bottom: 2.8%;
-`
-
-const LowerText = styled.p`
-  font-size: 0.875rem;
-  letter-spacing: 0.125rem;
-  color: #a4b0be;
-  animation-name: ${slideIn};
-  animation-duration: 3s;
+const Proccesses = styled.div`
+  position: relative;
+  display: flex;
+  gap: 90px;
+  width: 100%;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin 20px 0;
 `
 
 const Home: NextPage = () => {
-  const router = useRouter()
+  const [selected, setSelected] = useState(false)
+
   return (
     <Layout
       title="Flairgo | a tech company"
       metaContent="description"
       metaDiscription="Flairgo is a Sri Lankan tech statup which mainly focuses on web and mobile application development"
     >
-      <HomeContainer>
-        <Logo>Flairgo</Logo>
-        <Title>We help you build technology</Title>
+      <Proccesses>
+        <Card
+          onMouseEnter={() => setSelected(true)}
+          onMouseLeave={() => setSelected(false)}
+        >
+          <h2>Lorem Ipsum is simply dummy text </h2>
+          <p>
+            {' '}
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has
+          </p>
+        </Card>
+        <Card>
+          <h2>Lorem Ipsum is simply dummy text </h2>
+          <p>
+            {' '}
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has
+          </p>
+        </Card>
+        <Card>
+          <h2>Lorem Ipsum is simply dummy text </h2>
+          <p>
+            {' '}
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has
+          </p>
+        </Card>
+      </Proccesses>
 
-        <Button onClick={() => router.push('contact')}>
-          Schedule a session
-        </Button>
-      </HomeContainer>
-
-      <LowerTextContainer>
-        <LowerText>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has
-        </LowerText>
-      </LowerTextContainer>
+      {selected && <HoloItem appear={selected} />}
     </Layout>
   )
 }

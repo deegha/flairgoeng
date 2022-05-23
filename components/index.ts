@@ -6,6 +6,7 @@ export { Layout } from './layout'
 export { Button } from './button'
 export { TextInput } from './textInput'
 export { TextArea } from './textArea'
+export { HoloItem } from './holoItem'
 
 export const BoldTitle = styled.h1`
   font-size: 5.1rem;

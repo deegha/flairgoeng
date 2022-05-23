@@ -1,17 +1,28 @@
 import styled from 'styled-components'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useState } from 'react'
 
-const NavContainer = styled.div`
+const NavContainer = styled.div<{ hide: boolean }>`
   display: flex;
   justify-content: center;
   width: 100%;
   padding: 0.5rem;
+  ${({ hide }) => hide && `transform: translateY(-120px)`};
+  padding: 5px;
+
+  justify-content: center;
+  transition: all 0.5s ease-out;
+  position: fixed;
+
+  background: rgba(2, 2, 2, 0.1);
+  backdrop-filter: blur(4px) saturate(150%);
+  border: 1px solid rgba(2, 2, 2, 0.1);
+
+  z-index: 3;
 `
 
 const NavInnerContainer = styled.nav`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 
   width: 80%;
 `
@@ -32,12 +43,17 @@ const NavItem = styled.li<{ selected: boolean }>`
 
   ${({ selected, theme }) =>
     selected &&
-    `border-bottom: 1px solid ${theme.color.light}; transition: border-color 3s ease;`}
+    `border-bottom: 1px solid ${theme.color.light}; 
+    transition: border-color 3s ease;`}
 `
 
 interface IPage {
   name: string
   url: string
+}
+
+interface IProps {
+  hide: boolean
 }
 
 const links: Array<IPage> = [
@@ -59,21 +75,21 @@ const links: Array<IPage> = [
   },
 ]
 
-export const Navbar: React.FunctionComponent = () => {
-  const router = useRouter()
+export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
+  const [selectedSection, selectSection] = useState<string>('')
 
   return (
-    <NavContainer>
+    <NavContainer hide={hide}>
       <NavInnerContainer>
         <Nav>
           {links.map((link) => (
-            <Link href={`/${link.url}`} key={link.url}>
-              <a>
-                <NavItem selected={router.pathname === `/${link.url}`}>
-                  {link.name}
-                </NavItem>
-              </a>
-            </Link>
+            <NavItem
+              onClick={() => selectSection(link.url)}
+              key={link.url}
+              selected={link.url === selectedSection}
+            >
+              {link.name}
+            </NavItem>
           ))}
         </Nav>
       </NavInnerContainer>

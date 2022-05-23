@@ -1,36 +1,18 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { Navbar, Header } from 'components'
-
-const slideIn = keyframes`
-  0% {
-    transform: translateX(100vh);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-`
+import { useEffect, useState } from 'react'
+import { useScrollDirection } from 'react-use-scroll-direction'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 128, 0.2),
-      rgba(0, 0, 0, 0.9)
-    ),
-    url('https://res.cloudinary.com/duqpgdc9v/image/upload/v1652367567/flairgo-eng/flaigo-eng-bg.jpg');
-  min-height: 100vh;
+  align-items: center;
+  background-color: ${({ theme }) => theme.color.dark};
   overflow: hidden;
 `
 
-const Holder = styled.div``
-
 const Page = styled.div`
-  animation-name: ${slideIn};
   animation-duration: 0.4s;
   display: flex;
   flex-direction: column;
@@ -51,6 +33,14 @@ export const Layout: React.FunctionComponent<IProps> = ({
   metaContent,
   metaDiscription,
 }) => {
+  const { isScrollingUp, isScrollingDown } = useScrollDirection()
+  const [hideNav, setHideNav] = useState<boolean>(false)
+
+  useEffect(() => {
+    isScrollingDown && setHideNav(true)
+    isScrollingUp && setHideNav(false)
+  }, [isScrollingDown, isScrollingUp])
+
   return (
     <Container>
       <Header
@@ -58,9 +48,9 @@ export const Layout: React.FunctionComponent<IProps> = ({
         metaContent={metaContent}
         metaDescription={metaDiscription}
       />
-      <Holder>
-        <Navbar />
-      </Holder>
+
+      <Navbar hide={hideNav} />
+
       <Page>{children}</Page>
     </Container>
   )
