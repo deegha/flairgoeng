@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { H1 } from './h1'
 import Image from 'next/image'
 import heroRight from 'assets/heroRight.svg'
-import { TextLarge } from './textLarge'
+import { HeadingLarge } from 'components'
 import scrollBtn from 'assets/scroll.svg'
 import React from 'react'
 
@@ -51,21 +51,21 @@ export const Hero: React.FC = () => {
         </HeaderContainer>
         <LeftBottomContainer>
           <ArrowBtnContainer>
-            <Image layout="fixed" src={scrollBtn} />
+            <Image layout="fixed" src={scrollBtn} alt="Flairgo Labs" />
           </ArrowBtnContainer>
           <BottomRight>
             <IntroTextContainer>
-              <TextLarge>
+              <HeadingLarge>
                 We are React Native community-trusted, extremely skilled
                 Javascript developers ready for hire for your next React Native
                 and React project
-              </TextLarge>
+              </HeadingLarge>
             </IntroTextContainer>
           </BottomRight>
         </LeftBottomContainer>
       </LeftContainer>
 
-      <Image layout="fixed" src={heroRight} />
+      <Image layout="fixed" src={heroRight} alt="Navigate Next Section" />
     </HeroContainer>
   )
 }

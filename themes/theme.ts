@@ -1,15 +1,5 @@
 import 'styled-components'
 
-interface IButtonType {
-  primary: string
-}
-
-interface IButtonState {
-  Active: string
-  Hover: string
-  Disabled: string
-}
-
 declare module 'styled-components' {
   export interface DefaultTheme {
     color: {
