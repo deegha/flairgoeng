@@ -17,7 +17,7 @@ const ImageContainer = styled.div<{ width: string }>`
 export const Logo = ({ width }: IProps) => {
   return (
     <ImageContainer width={width}>
-      <Image layout="fill" src={flairgoImg} />
+      <Image layout="fill" src={flairgoImg} alt="Flairgo" />
     </ImageContainer>
   )
 }

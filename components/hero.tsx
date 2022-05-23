@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
         </HeaderContainer>
         <LeftBottomContainer>
           <ArrowBtnContainer>
-            <Image layout="fixed" src={scrollBtn} alt="Flairgo Labs" />
+            <Image layout="fixed" src={scrollBtn} alt="Navigate Next Section" />
           </ArrowBtnContainer>
           <BottomRight>
             <IntroTextContainer>
@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
         </LeftBottomContainer>
       </LeftContainer>
 
-      <Image layout="fixed" src={heroRight} alt="Navigate Next Section" />
+      <Image layout="fixed" src={heroRight} alt="Computer" />
     </HeroContainer>
   )
 }
