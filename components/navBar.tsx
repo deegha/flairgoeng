@@ -7,18 +7,17 @@ const NavContainer = styled.div<{ hide: boolean }>`
   display: flex;
   max-width: 104.39rem;
   width: 100%;
-  height: 9.25rem;
+  height: 8rem;
   ${({ hide }) => hide && `transform: translateY(-12.5rem)`};
-
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease-out;
   position: fixed;
-
+  top: 0;
   background: rgba(2, 2, 2, 0.1);
   backdrop-filter: blur(4px) saturate(150%);
   border: 1px solid rgba(2, 2, 2, 0.1);
-
+  padding: 0 20px;
   z-index: 3;
 `
 

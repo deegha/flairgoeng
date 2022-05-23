@@ -12,6 +12,8 @@ const TextLargeContainer = styled.div`
   color: #ffffff;
 `
 
-export const HeadingLarge = ({ children }: { children: React.ReactNode }) => {
+export const HeadingLarge: React.FC<{
+  children: React.ReactNode
+}> = ({ children }) => {
   return <TextLargeContainer>{children}</TextLargeContainer>
 }

@@ -1,11 +1,13 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ThemeContext } from 'context/themeContext'
+import { ThemeContext, AppContextProvider } from 'context/'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeContext>
-      <Component {...pageProps} />
+      <AppContextProvider>
+        <Component {...pageProps} />
+      </AppContextProvider>
     </ThemeContext>
   )
 }

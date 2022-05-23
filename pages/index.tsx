@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Layout } from 'components'
-import { Hero } from 'components/hero'
+import { Hero, Services } from 'components'
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +10,7 @@ const Home: NextPage = () => {
       metaDiscription="Flairgo is a Sri Lankan tech statup which mainly focuses on web and mobile application development"
     >
       <Hero />
+      <Services />
     </Layout>
   )
 }
