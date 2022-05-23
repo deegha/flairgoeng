@@ -8,14 +8,13 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
-  width: 100vw;
   background-color: ${({ theme }) => theme.color.background};
+  padding: 50px;
 `
 
 const Page = styled.div`
   max-width: 104.39rem;
-  min-height: 100vh;
+  padding: 0 20px;
 `
 
 interface IProps {
@@ -41,11 +40,7 @@ export const Layout: React.FunctionComponent<IProps> = ({
 
   return (
     <Container>
-      <Header
-        title={title}
-        metaContent={metaContent}
-        metaDescription={metaDiscription}
-      />
+      <Header title={title} metaContent={metaContent} metaDescription={metaDiscription} />
 
       <Navbar hide={hideNav} />
 

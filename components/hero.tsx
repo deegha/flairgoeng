@@ -14,7 +14,7 @@ const HeroContainer = styled.div`
 
 const LeftContainer = styled.div`
   width: 50%;
-  color: #ffffff;
+  color: ${({ theme }) => theme.color.text};
 `
 
 const HeaderContainer = styled.div`

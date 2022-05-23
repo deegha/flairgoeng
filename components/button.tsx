@@ -22,19 +22,17 @@ const ButtonContainer = styled.div<{ type: BtnType }>`
   cursor: pointer;
   font-weight: 600;
   line-height: 2rem;
+
   &:hover {
+    transition: all 0.7s;
     color: ${({ theme, type }) => theme.color.button.hover.text[type]};
-    background-color: ${({ theme, type }) =>
-      theme.color.button.hover.background[type]};
+    background-color: ${({ theme, type }) => theme.color.button.hover.background[type]};
   }
 `
 
 export const Button: React.FC<IButton> = ({ onClick, type, children }) => {
   return (
-    <ButtonContainer
-      onClick={type !== 'disabled' ? onClick : undefined}
-      type={type}
-    >
+    <ButtonContainer onClick={type !== 'disabled' ? onClick : undefined} type={type}>
       {children}
     </ButtonContainer>
   )

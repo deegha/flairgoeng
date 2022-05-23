@@ -9,6 +9,7 @@ declare module 'styled-components' {
       dark: string
       gray: string
       background: string
+      text: string
       button: {
         background: {
           primary: string
