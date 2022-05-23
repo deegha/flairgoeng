@@ -2,8 +2,10 @@ import { DefaultTheme } from 'styled-components'
 
 const defaultColors = {
   primary: '#3A36FF',
+  primaryAux: '#4B47FF',
   secondary: '#8337FF',
-  back: '#04080F',
+  background: '#090A18',
+  black: '#04080F',
   white: '#FFFFFF',
   n800: '#02010D',
   n700: '#151526',
@@ -24,12 +26,29 @@ export const defaultLight: DefaultTheme = {
     light: defaultColors.n10,
     dark: defaultColors.n800,
     gray: defaultColors.n600,
+    background: defaultColors.background,
     button: {
       background: {
         primary: defaultColors.primary,
+        secondary: defaultColors.primary,
+        disabled: defaultColors.n50,
       },
       text: {
         primary: defaultColors.n10,
+        secondary: defaultColors.n10,
+        disabled: defaultColors.n400,
+      },
+      hover: {
+        background: {
+          primary: defaultColors.primaryAux,
+          secondary: defaultColors.primaryAux,
+          disabled: defaultColors.n50,
+        },
+        text: {
+          primary: defaultColors.n10,
+          secondary: defaultColors.n10,
+          disabled: defaultColors.n400,
+        },
       },
     },
     textInput: {

@@ -8,16 +8,14 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: ${({ theme }) => theme.color.dark};
   overflow: hidden;
+  width: 100vw;
+  background-color: ${({ theme }) => theme.color.background};
 `
 
 const Page = styled.div`
-  animation-duration: 0.4s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: 104.39rem;
+  min-height: 100vh;
 `
 
 interface IProps {

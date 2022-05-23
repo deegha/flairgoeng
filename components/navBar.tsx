@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import { Logo } from './logo'
+import { Button } from './button'
 
 const NavContainer = styled.div<{ hide: boolean }>`
   display: flex;
-  justify-content: center;
+  max-width: 104.39rem;
   width: 100%;
-  padding: 0.5rem;
-  ${({ hide }) => hide && `transform: translateY(-120px)`};
-  padding: 5px;
+  height: 9.25rem;
+  ${({ hide }) => hide && `transform: translateY(-12.5rem)`};
 
   justify-content: center;
+  align-items: center;
   transition: all 0.5s ease-out;
   position: fixed;
 
@@ -22,15 +24,16 @@ const NavContainer = styled.div<{ hide: boolean }>`
 
 const NavInnerContainer = styled.nav`
   display: flex;
-  justify-content: center;
-
-  width: 80%;
+  align-items: center;
+  width: 100%;
 `
 
 const Nav = styled.ul`
   padding: 0;
   margin: 0;
   display: flex;
+  flex: 4;
+  justify-content: center;
 `
 
 const NavItem = styled.li<{ selected: boolean }>`
@@ -45,6 +48,18 @@ const NavItem = styled.li<{ selected: boolean }>`
     selected &&
     `border-bottom: 1px solid ${theme.color.light}; 
     transition: border-color 3s ease;`}
+`
+
+const BtnContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+`
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
 `
 
 interface IPage {
@@ -81,6 +96,10 @@ export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
   return (
     <NavContainer hide={hide}>
       <NavInnerContainer>
+        <LogoContainer>
+          <Logo width={'9.61rem'} />
+        </LogoContainer>
+
         <Nav>
           {links.map((link) => (
             <NavItem
@@ -92,6 +111,11 @@ export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
             </NavItem>
           ))}
         </Nav>
+        <BtnContainer>
+          <Button onClick={() => console.log('Hello')} type={'primary'}>
+            HIRE US
+          </Button>
+        </BtnContainer>
       </NavInnerContainer>
     </NavContainer>
   )
