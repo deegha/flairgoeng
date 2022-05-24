@@ -24,14 +24,14 @@ const slideIn = keyframes`
 `
 
 const ServiceItemContainer = styled.div<{ selected: boolean }>`
-  transition: border 0.3s ease-out;
+  transition: outline 0.3s ease-out;
   cursor: pointer;
   margin: 14.5rem 0;
   width: 32%;
   height: 50rem;
   backdrop-filter: blur(6.25rem);
   border-radius: 0.75rem;
-  ${({ selected }) => selected && `border: 4px solid #3A36FF;`}
+  ${({ selected }) => selected && `outline: 4px solid #3A36FF;`}
   background: rgba(255, 255, 255, 0.04);
   padding: 3.813rem;
   overflow: hidden;
@@ -44,7 +44,7 @@ const ServiceItemContainer = styled.div<{ selected: boolean }>`
 `
 
 const ItemHeader = styled.h2`
-  font-family: 'RocGrotesk';
+  font-family: 'RocGrotesk', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 4rem;
@@ -56,7 +56,7 @@ const ItemHeader = styled.h2`
 `
 
 const ItemContent = styled.p`
-  font-family: 'RocGrotesk';
+  font-family: 'RocGrotesk', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;

@@ -72,19 +72,15 @@ interface IProps {
 
 const links: Array<IPage> = [
   {
-    name: 'Home',
-    url: '',
-  },
-  {
-    name: 'About us',
-    url: 'about',
-  },
-  {
-    name: 'Our Services',
+    name: 'SERVICES',
     url: 'services',
   },
   {
-    name: 'Contact us',
+    name: 'PROCESS',
+    url: 'process',
+  },
+  {
+    name: 'CONTACT',
     url: 'contact',
   },
 ]
