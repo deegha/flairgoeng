@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Layout } from 'components'
-import { Hero, Services } from 'components'
+import { Hero, Services, Processes } from 'components'
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +11,7 @@ const Home: NextPage = () => {
     >
       <Hero />
       <Services />
+      <Processes />
     </Layout>
   )
 }
