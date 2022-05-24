@@ -21,11 +21,11 @@ const NeonLight1 = styled.div`
   width: 448px;
   height: 480px;
   left: 18%;
-  top: 2500px;
+  top: 277px;
   border-radius: 50%;
 
-  background: radial-gradient(circle at 50% 50%, rgba(58, 54, 255, 1), rgba(58, 54, 255, 0));
-  filter: blur(100px);
+  background: radial-gradient(circle at 50% 50%, rgba(131, 55, 255, 1), rgba(131, 55, 255, 0));
+  filter: blur(200px);
   opacity: 0.6;
 `
 
@@ -34,12 +34,15 @@ const NeonLight2 = styled.div`
   width: 820.73px;
   height: 820.73px;
   left: 50%;
-  top: 1900px;
-  border-radius: 50%;
+  top: -83px;
 
   background: radial-gradient(circle at 50% 50%, rgba(58, 54, 255, 1), rgba(58, 54, 255, 0));
-  filter: blur(100px);
+  filter: blur(200px);
   opacity: 0.6;
+`
+
+const Container = styled.div`
+  position: relative;
 `
 
 export const Processes: React.FC = () => {
@@ -62,7 +65,7 @@ export const Processes: React.FC = () => {
   }
 
   return (
-    <div>
+    <Container>
       <TitleContainer>
         OUR
         <br />
@@ -71,6 +74,6 @@ export const Processes: React.FC = () => {
       {getProcess()}
       <NeonLight1 />
       <NeonLight2 />
-    </div>
+    </Container>
   )
 }
