@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 const H1Container = styled.h1`
-  font-family: 'RocGrotesk', sans-serif;
+  font-family: 'Questrial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 4rem;
   line-height: 5.5rem;
+  margin: 0;
   font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
 `
 

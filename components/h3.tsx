@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 const H3Container = styled.h3`
-  font-family: 'RocGrotesk', sans-serif;
+  font-family: 'Questrial', sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 2.625rem;
   line-height: 3.5rem;
-
+  margin: 0;
   font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
 `
 interface IProp {

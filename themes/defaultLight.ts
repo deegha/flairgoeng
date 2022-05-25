@@ -28,6 +28,7 @@ export const defaultLight: DefaultTheme = {
     gray: defaultColors.n600,
     background: defaultColors.background,
     text: defaultColors.white,
+    textAlt: defaultColors.n500,
     button: {
       background: {
         primary: defaultColors.primary,
