@@ -107,7 +107,7 @@ export const Footer: React.FC = () => {
         <RightContainer>
           <RightTop>
             <ButtonContainer>
-              <Image layout="fixed" src={upArrow}></Image>
+              <Image layout="fixed" src={upArrow} alt="Up Arrow"></Image>
               <BtnTextContainer>
                 <H5>Back to top</H5>
               </BtnTextContainer>
