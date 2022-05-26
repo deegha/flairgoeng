@@ -17,7 +17,7 @@ const NavContainer = styled.div<{ hide: boolean }>`
   background: rgba(2, 2, 2, 0.1);
   backdrop-filter: blur(4px) saturate(150%);
   border: 1px solid rgba(2, 2, 2, 0.1);
-  padding: 0 20px;
+  padding: 0 90px;
   z-index: 3;
 `
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-
+import { useApp, TDevice } from 'context'
 export type TType = 'mobile' | 'web' | 'consultancy'
 
 interface IProps {
@@ -23,7 +23,7 @@ const slideIn = keyframes`
   }
 `
 
-const ServiceItemContainer = styled.div<{ selected: boolean }>`
+const ServiceItemContainer = styled.div<{ selected: boolean; device: TDevice }>`
   transition: outline 0.3s ease-out;
   cursor: pointer;
   margin: 14.5rem 0;
@@ -36,14 +36,27 @@ const ServiceItemContainer = styled.div<{ selected: boolean }>`
   padding: 3.813rem;
   overflow: hidden;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  ${({ device }) =>
+    device === 'smallDesktop' &&
+    `
+    padding: 4rem 1.813rem;
+    
+    height: 40rem;
+  `}
+
   &:hover {
     h2 {
-      transform: translateY(-50px);
+      transform: translateY(-70px);
     }
   }
 `
 
-const ItemHeader = styled.h2`
+const ItemHeader = styled.h2<{ device: TDevice }>`
   font-family: 'RocGrotesk', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -53,9 +66,15 @@ const ItemHeader = styled.h2`
   color: ${({ theme }) => theme.color.text};
   transition: transform 0.3s ease-out;
   margin-bottom: 0;
+  ${({ device }) =>
+    device === 'smallDesktop' &&
+    `
+  font-size: 3.8rem;
+  
+`}
 `
 
-const ItemContent = styled.p`
+const ItemContent = styled.p<{ device: TDevice }>`
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;
@@ -66,6 +85,12 @@ const ItemContent = styled.p`
   color: ${({ theme }) => theme.color.text};
   margin: 0;
   width: 90%;
+
+  ${({ device }) =>
+    device === 'smallDesktop' &&
+    `
+  font-size: 1.5rem;
+  `}
 `
 
 export const ServiceItem: React.FunctionComponent<IProps> = ({
@@ -76,16 +101,18 @@ export const ServiceItem: React.FunctionComponent<IProps> = ({
   content,
 }) => {
   const [showConten, setShowContent] = useState<boolean>(false)
-
+  const { device } = useApp()
+  console.log(device)
   return (
     <ServiceItemContainer
+      device={device}
       onMouseEnter={() => setShowContent(true)}
       onMouseLeave={() => setShowContent(false)}
       selected={selected === id}
       onClick={() => select(id)}
     >
-      <ItemHeader>{title}</ItemHeader>
-      {showConten && <ItemContent>{content}</ItemContent>}
+      <ItemHeader device={device}>{title}</ItemHeader>
+      {showConten && <ItemContent device={device}>{content}</ItemContent>}
     </ServiceItemContainer>
   )
 }

@@ -2,19 +2,25 @@ import styled from 'styled-components'
 import { Navbar, Header } from 'components'
 import { useEffect, useState } from 'react'
 import { useScrollDirection } from 'react-use-scroll-direction'
+import { useApp, TDevice } from 'context'
 
-const Container = styled.div`
+const Container = styled.div<{ device: TDevice }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: ${({ theme }) => theme.color.background};
-  padding: 50px;
+
+  ${({ device }) =>
+    device === 'smallDesktop' &&
+    `
+    overflow: hidden;
+  `}
 `
 
 const Page = styled.div`
   max-width: 104.39rem;
-  padding: 0 20px;
+  padding: 0 90px;
 `
 
 interface IProps {
@@ -32,6 +38,7 @@ export const Layout: React.FunctionComponent<IProps> = ({
 }) => {
   const { isScrollingUp, isScrollingDown } = useScrollDirection()
   const [hideNav, setHideNav] = useState<boolean>(false)
+  const { device } = useApp()
 
   useEffect(() => {
     isScrollingDown && setHideNav(true)
@@ -39,7 +46,7 @@ export const Layout: React.FunctionComponent<IProps> = ({
   }, [isScrollingDown, isScrollingUp])
 
   return (
-    <Container>
+    <Container device={device}>
       <Header
         title={title}
         metaContent={metaContent}
