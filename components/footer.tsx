@@ -82,7 +82,7 @@ const BottomContainer = styled.div`
   font-size: 1rem;
   padding-top: 0.625rem;
   line-height: 2rem;
-  margin-top: 10.125rem;
+  margin: 10.125rem 0;
   border-top: 1px solid ${({ theme }) => theme.color.gray};
   color: ${({ theme }) => theme.color.gray};
   font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
@@ -147,7 +147,7 @@ export const Footer: React.FC = () => {
       </OuterContainer>
       <BottomContainer>
         <div>©2021 Flairgo Labs, All right reserved</div>
-        <div>Crafted by CHEFUX LABS</div>
+        <div>Desinged by CHEFUX LABS | Build by FLAIRGOLABS</div>
       </BottomContainer>
     </FooterContainer>
   )

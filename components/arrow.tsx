@@ -11,15 +11,21 @@ const ArrowContainer = styled.div`
   align-items: center;
   transition: transform 0.3s;
   background-color: ${({ theme }) => theme.color.light};
-
+  cursor: pointer;
   &: hover {
     transform: scale(1.04);
   }
 `
 
 export const Arrow: React.FC = () => {
+  const scroll = (url: string) => {
+    const section = document.querySelector(`#${url}`)
+    if (!section) return
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
-    <ArrowContainer>
+    <ArrowContainer onClick={() => scroll('services')}>
       <Image layout="fixed" src={arrowDown} alt="Navigate Next Section" />
     </ArrowContainer>
   )

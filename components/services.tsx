@@ -31,7 +31,7 @@ const NeonLight = styled.div`
 export const Services: React.FC = () => {
   const { setService, selectedService } = useApp()
   return (
-    <ServicesContainer>
+    <ServicesContainer id="services">
       <NeonLight />
       <ItemContainer>
         <ServiceItem

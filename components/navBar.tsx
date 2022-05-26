@@ -42,10 +42,11 @@ const NavItem = styled.li<{ selected: boolean }>`
   color: ${({ theme }) => theme.color.light};
   font-weight: 500;
   font-size: 1rem;
+  opacity: 0.4;
 
-  ${({ selected, theme }) =>
+  ${({ selected }) =>
     selected &&
-    `border-bottom: 1px solid ${theme.color.light}; 
+    `opacity: 1; 
     transition: border-color 3s ease;`}
 `
 
@@ -88,6 +89,17 @@ const links: Array<IPage> = [
 export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
   const [selectedSection, selectSection] = useState<string>('')
 
+  const scroll = (url: string) => {
+    const section = document.querySelector(`#${url}`)
+    if (!section) return
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const handleClickNavItem = (url: string) => {
+    selectSection(url)
+    scroll(url)
+  }
+
   return (
     <NavContainer hide={hide}>
       <NavInnerContainer>
@@ -98,7 +110,7 @@ export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
         <Nav>
           {links.map((link) => (
             <NavItem
-              onClick={() => selectSection(link.url)}
+              onClick={() => handleClickNavItem(link.url)}
               key={link.url}
               selected={link.url === selectedSection}
             >

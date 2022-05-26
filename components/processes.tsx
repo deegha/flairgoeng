@@ -79,6 +79,7 @@ export const Processes: React.FC = () => {
         <br />
         PROCESS
       </TitleContainer>
+      <div id="process" />
       {getProcess()}
       <NeonLight1 />
       <NeonLight2 />
