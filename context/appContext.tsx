@@ -21,7 +21,9 @@ export const useApp = () => {
 }
 
 export const AppContextProvider: React.FC<IProps> = ({ children }) => {
-  return <AppContext.Provider value={useValues()}>{children}</AppContext.Provider>
+  return (
+    <AppContext.Provider value={useValues()}>{children}</AppContext.Provider>
+  )
 }
 
 export default AppContextProvider

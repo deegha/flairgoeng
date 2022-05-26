@@ -32,7 +32,11 @@ const ContentContainer = styled.div`
   font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
 `
 
-export const ProcessItem: React.FC<IProp> = ({ Heading, Subheading, Content }) => {
+export const ProcessItem: React.FC<IProp> = ({
+  Heading,
+  Subheading,
+  Content,
+}) => {
   return (
     <OuterContainer>
       <div>

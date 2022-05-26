@@ -7,7 +7,9 @@ interface IProps {
   placeholder: string
   value: string
   name: string
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void
+  onChange: (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => void
   state: TState
 }
 
@@ -39,7 +41,13 @@ export const TextArea: React.FunctionComponent<IProps> = ({
 }) => {
   return (
     <Container state={state}>
-      <textarea rows={7} name={name} onChange={onChange} value={value} placeholder={placeholder} />
+      <textarea
+        rows={7}
+        name={name}
+        onChange={onChange}
+        value={value}
+        placeholder={placeholder}
+      />
     </Container>
   )
 }

@@ -40,7 +40,11 @@ export const Layout: React.FunctionComponent<IProps> = ({
 
   return (
     <Container>
-      <Header title={title} metaContent={metaContent} metaDescription={metaDiscription} />
+      <Header
+        title={title}
+        metaContent={metaContent}
+        metaDescription={metaDiscription}
+      />
 
       <Navbar hide={hideNav} />
 

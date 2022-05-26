@@ -6,7 +6,9 @@ interface IProps {
   placeholder: string
   value: string
   name: string
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void
+  onChange: (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => void
   state: TState
 }
 
@@ -36,7 +38,13 @@ export const TextInput: React.FunctionComponent<IProps> = ({
 }) => {
   return (
     <Container state={state}>
-      <input type="text" value={value} name={name} onChange={onChange} placeholder={placeholder} />
+      <input
+        type="text"
+        value={value}
+        name={name}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
     </Container>
   )
 }

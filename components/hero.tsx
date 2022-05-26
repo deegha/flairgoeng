@@ -59,8 +59,9 @@ export const Hero: React.FC = () => {
           </ArrowBtnContainer>
           <BottomRight>
             <IntroTextContainer>
-              We are React Native community-trusted, extremely skilled Javascript developers ready
-              for hire for your next React Native and React project
+              We are React Native community-trusted, extremely skilled
+              Javascript developers ready for hire for your next React Native
+              and React project
             </IntroTextContainer>
           </BottomRight>
         </LeftBottomContainer>
