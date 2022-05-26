@@ -10,6 +10,7 @@ declare module 'styled-components' {
       gray: string
       background: string
       text: string
+      textAlt: string
       button: {
         background: {
           primary: string

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const TitleContainer = styled.h1`
   margin: 0;
   padding-bottom: 19.75rem;
-  font-family: 'RocGrotesk', sans-serif;
+  font-family: 'Questrial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15rem;

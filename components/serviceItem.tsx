@@ -56,7 +56,6 @@ const ItemHeader = styled.h2`
 `
 
 const ItemContent = styled.p`
-  font-family: 'RocGrotesk', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;

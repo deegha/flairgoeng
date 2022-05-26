@@ -10,9 +10,11 @@ const ImageContainer = styled.div<{ width: string }>`
   width: ${(props) => props.width};
   max-width: 100%;
   object-fit: contain;
-  height: ${(props) => (parseFloat(props.width) * 9.61).toString()}px;
+  height: 2rem;
   position: relative;
 `
+
+// height: ${(props) => (parseFloat(props.width) * 9.61).toString()}px;
 
 export const Logo = ({ width }: IProps) => {
   return (

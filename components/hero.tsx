@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import heroRight from 'assets/heroRight.svg'
-import { H4, H1, Arrow } from 'components'
+import { H1, Arrow } from 'components'
 import React from 'react'
 
 const HeroContainer = styled.div`
@@ -32,7 +32,13 @@ const BottomRight = styled.div`
 const IntroTextContainer = styled.div`
   width: 100%;
   position: absolute;
-  top: -6rem;
+  top: -3.9rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+
+  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
 `
 
 const ArrowBtnContainer = styled.div`
@@ -53,10 +59,8 @@ export const Hero: React.FC = () => {
           </ArrowBtnContainer>
           <BottomRight>
             <IntroTextContainer>
-              <H4>
-                We are React Native community-trusted, extremely skilled Javascript developers ready
-                for hire for your next React Native and React project
-              </H4>
+              We are React Native community-trusted, extremely skilled Javascript developers ready
+              for hire for your next React Native and React project
             </IntroTextContainer>
           </BottomRight>
         </LeftBottomContainer>

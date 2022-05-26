@@ -1,11 +1,16 @@
 import styled from 'styled-components'
-import { H3, H4, H5 } from 'components'
+import { H3, H4 } from 'components'
 
 interface IProp {
   Heading: string
   Subheading: string
   Content: string
 }
+
+const MidContainer = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+`
 
 const OuterContainer = styled.div`
   padding: 6.25rem 8.188rem 6.25rem 4.625rem;
@@ -17,13 +22,25 @@ const OuterContainer = styled.div`
     align-self:flex-end;
 `
 
+const ContentContainer = styled.div`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+
+  /* or 133% */
+  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
+`
+
 export const ProcessItem: React.FC<IProp> = ({ Heading, Subheading, Content }) => {
   return (
     <OuterContainer>
       <div>
         <H3>{Heading}</H3>
-        <H4>{Subheading}</H4>
-        <H5>{Content}</H5>
+        <MidContainer>
+          <H4>{Subheading}</H4>
+        </MidContainer>
+        <ContentContainer>{Content}</ContentContainer>
       </div>
     </OuterContainer>
   )
