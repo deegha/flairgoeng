@@ -24,7 +24,11 @@ const NeonLight1 = styled.div`
   top: 277px;
   border-radius: 50%;
 
-  background: radial-gradient(circle at 50% 50%, rgba(131, 55, 255, 1), rgba(131, 55, 255, 0));
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(131, 55, 255, 1),
+    rgba(131, 55, 255, 0)
+  );
   filter: blur(200px);
   opacity: 0.6;
 `
@@ -36,7 +40,11 @@ const NeonLight2 = styled.div`
   left: 50%;
   top: -83px;
 
-  background: radial-gradient(circle at 50% 50%, rgba(58, 54, 255, 1), rgba(58, 54, 255, 0));
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(58, 54, 255, 1),
+    rgba(58, 54, 255, 0)
+  );
   filter: blur(200px);
   opacity: 0.6;
 `

@@ -19,7 +19,11 @@ const NeonLight = styled.div`
   top: 1308px;
   border-radius: 50%;
 
-  background: radial-gradient(circle at 50% 50%, rgba(58, 54, 255, 1), rgba(58, 54, 255, 0));
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(58, 54, 255, 1),
+    rgba(58, 54, 255, 0)
+  );
   filter: blur(100px);
   opacity: 0.6;
 `
