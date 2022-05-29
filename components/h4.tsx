@@ -10,7 +10,8 @@ const H4Container = styled.h4`
   margin: 0;
 
   @media ${devices.tablet} {
-    font-size: 1.5 rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 `
 interface IProp {

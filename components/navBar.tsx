@@ -79,8 +79,36 @@ const LogoContainer = styled.div`
 `
 
 const Hamberger = styled.div`
+  display: none;
   @media ${devices.tablet} {
     display: block;
+  }
+`
+
+const MobileNav = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  background: #212121;
+  top: 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 2.625rem;
+      line-height: 3.5rem;
+      margin: 1.5rem 0;
+      list-style: none;
+      color: ${({ theme }) => theme.color.light};
+    }
   }
 `
 
@@ -110,6 +138,7 @@ const links: Array<IPage> = [
 
 export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
   const [selectedSection, selectSection] = useState<string>('')
+  const [mobileNav, setMobileNav] = useState<boolean>(false)
 
   const scroll = (url: string) => {
     const section = document.querySelector(`#${url}`)
@@ -145,7 +174,7 @@ export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
             HIRE US
           </Button>
         </BtnContainer>
-        <Hamberger>
+        <Hamberger onClick={() => setMobileNav(true)}>
           <Image
             layout="fixed"
             src={HambergerIcon}
@@ -153,6 +182,15 @@ export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
           />
         </Hamberger>
       </NavInnerContainer>
+      {mobileNav && (
+        <MobileNav>
+          <ul>
+            {links.map((link) => (
+              <li key={link.url}>{link.name}</li>
+            ))}
+          </ul>
+        </MobileNav>
+      )}
     </NavContainer>
   )
 }
