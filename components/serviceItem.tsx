@@ -90,6 +90,7 @@ const ItemContent = styled.p`
 
   animation-name: ${slideIn};
   animation-duration: 0.7s;
+
   color: ${({ theme }) => theme.color.text};
   margin: 0;
   width: 90%;

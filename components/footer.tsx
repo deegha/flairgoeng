@@ -3,6 +3,7 @@ import { Logo, H5 } from 'components'
 import Image from 'next/image'
 import upArrow from 'assets/upArrow.svg'
 import { devices } from 'themes/devices'
+import sideArrow from 'assets/sideArrow.svg'
 
 const FooterContainer = styled.div`
   padding-top: 9.625rem;
@@ -56,6 +57,9 @@ const LeftTop = styled.div`
 const LeftBottom = styled.div`
   padding-top: 8.313rem;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 `
 
 const ButtonContainer = styled.div`
@@ -64,6 +68,14 @@ const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`
+const SideArrowContainer = styled.div`
+  cursor: pointer;
+  transition: transform 0.5s;
+  transition-timing-function: ease-out;
+  &:hover {
+    transform: translateX(10px);
+  }
 `
 
 const RightTop = styled.div`
@@ -186,6 +198,10 @@ export const Footer: React.FC = () => {
           <LeftBottom>
             <FooterH3>hello@flairgolabs.com</FooterH3>
             <NeonLight />
+
+            <SideArrowContainer>
+              <Image layout="fixed" src={sideArrow} />
+            </SideArrowContainer>
           </LeftBottom>
         </LeftContainer>
         <RightContainer>
@@ -232,7 +248,7 @@ export const Footer: React.FC = () => {
       </OuterContainer>
       <BottomContainer>
         <div>©2021 Flairgo Labs, All right reserved</div>
-        <div>Desinged by CHEFUX LABS | Build by FLAIRGOLABS</div>
+        <div>Desinged by CHEFUX LABS | Built by FLAIRGO LABS</div>
       </BottomContainer>
     </FooterContainer>
   )
