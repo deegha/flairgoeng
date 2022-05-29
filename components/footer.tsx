@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Logo, H3, H5 } from 'components'
 import Image from 'next/image'
 import upArrow from 'assets/upArrow.svg'
+import { devices } from 'themes/devices'
 
 const FooterContainer = styled.div`
   padding-top: 9.625rem;
@@ -9,18 +10,36 @@ const FooterContainer = styled.div`
 
 const OuterContainer = styled.div`
   display: flex;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+  }
 `
 
 const LeftContainer = styled.div`
   color: ${({ theme }) => theme.color.text};
   width: 50%;
+
+  @media ${devices.tablet} {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 
 const TextContainer = styled.div`
   padding-top: 2rem;
+  @media ${devices.tablet} {
+    flex-direction: column;
+  }
 `
 const RightContainer = styled.div`
   width: 50%;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
 `
 
 const BtnTextContainer = styled.div`
@@ -49,6 +68,10 @@ const ButtonContainer = styled.div`
 const RightTop = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  @media ${devices.tablet} {
+    display: none;
+  }
 `
 
 const RightBottom = styled.div`
@@ -56,6 +79,11 @@ const RightBottom = styled.div`
   padding-top: 6.25rem;
   justify-content: flex-end;
   gap: 4rem;
+
+  @media ${devices.tablet} {
+    justify-content: space-between;
+    gap: none;
+  }
 `
 
 const ItemHeading = styled.div`
@@ -72,6 +100,10 @@ const Item = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media ${devices.tablet} {
+    align-items: flex-start;
+  }
 `
 
 const BottomContainer = styled.div`

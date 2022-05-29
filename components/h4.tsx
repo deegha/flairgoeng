@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { devices } from 'themes/devices'
 
 const H4Container = styled.h4`
   font-family: 'Questrial', sans-serif;
@@ -7,7 +8,10 @@ const H4Container = styled.h4`
   font-size: 2rem;
   line-height: 3rem;
   margin: 0;
-  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
+
+  @media ${devices.tablet} {
+    font-size: 1.5 rem;
+  }
 `
 interface IProp {
   children: React.ReactNode

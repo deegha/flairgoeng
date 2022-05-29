@@ -9,25 +9,41 @@ const HeroContainer = styled.div`
   display: flex;
   padding-top: 13.625rem;
   justify-content: space-between;
+
+  @media ${devices.tablet} {
+    padding-top: 8.625rem;
+  }
 `
 
 const LeftContainer = styled.div`
-  width: 50%;
+  width: 70%;
   color: ${({ theme }) => theme.color.text};
 `
 
 const HeaderContainer = styled.div`
   width: 80%;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
 `
 
 const LeftBottomContainer = styled.div`
   display: flex;
   justify-content: flex-start;
+
+  @media ${devices.tablet} {
+    padding-top: 8rem;
+  }
 `
 
 const BottomRight = styled.div`
   position: relative;
   width: 55%;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
 `
 
 const IntroTextContainer = styled.div`
@@ -39,11 +55,15 @@ const IntroTextContainer = styled.div`
   font-size: 2rem;
   line-height: 3rem;
 
-  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
-
   @media ${devices.laptopL} {
     font-size: 1.5rem;
     top: -0.9rem;
+  }
+
+  @media ${devices.tablet} {
+    font-size: 1rem;
+    line-height: 2rem;
+    top: 0;
   }
 `
 
@@ -54,6 +74,11 @@ const ArrowBtnContainer = styled.div`
   @media ${devices.laptopL} {
     padding-top: 2rem;
     padding-right: 4rem;
+  }
+
+  @media ${devices.tablet} {
+    padding-top: 0;
+    padding-right: 2rem;
   }
 `
 
@@ -66,6 +91,13 @@ const ImageContainer = styled.div`
     span {
       width: 500px !important;
       height: 500px !important;
+    }
+  }
+
+  @media ${devices.tablet} {
+    span {
+      width: 12.5rem !important;
+      height: 12.5rem !important;
     }
   }
 `

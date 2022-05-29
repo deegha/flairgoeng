@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import { useState } from 'react'
 import { Logo } from './logo'
 import { Button } from './button'
+import { devices } from 'themes/devices'
+import HambergerIcon from 'assets/evaMenuOutline.svg'
+import Image from 'next/image'
 
 const NavContainer = styled.div<{ hide: boolean }>`
   display: flex;
@@ -19,6 +22,11 @@ const NavContainer = styled.div<{ hide: boolean }>`
   border: 1px solid rgba(2, 2, 2, 0.1);
   padding: 0 90px;
   z-index: 3;
+
+  @media ${devices.tablet} {
+    padding: 0 30px;
+    height: 6rem;
+  }
 `
 
 const NavInnerContainer = styled.nav`
@@ -33,6 +41,10 @@ const Nav = styled.ul`
   display: flex;
   flex: 4;
   justify-content: center;
+
+  @media ${devices.tablet} {
+    display: none;
+  }
 `
 
 const NavItem = styled.li<{ selected: boolean }>`
@@ -54,12 +66,22 @@ const BtnContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   flex: 1;
+
+  @media ${devices.tablet} {
+    display: none;
+  }
 `
 
 const LogoContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex: 1;
+`
+
+const Hamberger = styled.div`
+  @media ${devices.tablet} {
+    display: block;
+  }
 `
 
 interface IPage {
@@ -123,6 +145,13 @@ export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
             HIRE US
           </Button>
         </BtnContainer>
+        <Hamberger>
+          <Image
+            layout="fixed"
+            src={HambergerIcon}
+            alt="Navigate Next Section"
+          />
+        </Hamberger>
       </NavInnerContainer>
     </NavContainer>
   )
