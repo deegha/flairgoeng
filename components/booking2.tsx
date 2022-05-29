@@ -60,7 +60,7 @@ interface IBookingLogoProp {
 const BookingLogo: React.FC<IBookingLogoProp> = ({ image, text }) => {
   return (
     <BookingLogoContainer>
-      <Image layout="fixed" src={image} />
+      <Image layout="fixed" src={image} alt={text} />
       <BookingLogoText>{text}</BookingLogoText>
     </BookingLogoContainer>
   )

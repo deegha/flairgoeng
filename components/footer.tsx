@@ -200,7 +200,7 @@ export const Footer: React.FC = () => {
             <NeonLight />
 
             <SideArrowContainer>
-              <Image layout="fixed" src={sideArrow} />
+              <Image layout="fixed" src={sideArrow} alt="Side Arrow" />
             </SideArrowContainer>
           </LeftBottom>
         </LeftContainer>
