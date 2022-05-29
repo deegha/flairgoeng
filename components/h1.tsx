@@ -7,7 +7,6 @@ const H1Container = styled.h1`
   font-size: 4rem;
   line-height: 5.5rem;
   margin: 0;
-  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
 `
 
 interface IProp {

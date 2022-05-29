@@ -3,6 +3,7 @@ import Image from 'next/image'
 import heroRight from 'assets/heroRight.svg'
 import { H1, Arrow } from 'components'
 import React from 'react'
+import { devices } from 'themes/devices'
 
 const HeroContainer = styled.div`
   display: flex;
@@ -39,11 +40,34 @@ const IntroTextContainer = styled.div`
   line-height: 3rem;
 
   font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
+
+  @media ${devices.laptopL} {
+    font-size: 1.5rem;
+    top: -0.9rem;
+  }
 `
 
 const ArrowBtnContainer = styled.div`
   padding-top: 4rem;
   padding-right: 8rem;
+
+  @media ${devices.laptopL} {
+    padding-top: 2rem;
+    padding-right: 4rem;
+  }
+`
+
+const ImageContainer = styled.div`
+  span {
+    width: 600px !important;
+    height: 600px !important;
+  }
+  @media ${devices.laptopL} {
+    span {
+      width: 500px !important;
+      height: 500px !important;
+    }
+  }
 `
 
 export const Hero: React.FC = () => {
@@ -66,8 +90,9 @@ export const Hero: React.FC = () => {
           </BottomRight>
         </LeftBottomContainer>
       </LeftContainer>
-
-      <Image layout="fixed" src={heroRight} alt="Computer" priority />
+      <ImageContainer>
+        <Image layout="fixed" src={heroRight} alt="Computer" priority />
+      </ImageContainer>
     </HeroContainer>
   )
 }

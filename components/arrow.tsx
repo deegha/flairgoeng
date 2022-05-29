@@ -4,8 +4,8 @@ import arrowDown from 'assets/arrowDown.svg'
 
 const ArrowContainer = styled.div`
   border-radius: 50%;
-  width: 12.5rem;
-  height: 12.5rem;
+  width: 11.5rem;
+  height: 11.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
