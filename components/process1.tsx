@@ -1,11 +1,19 @@
 import { ProcessItem } from 'components'
 import styled from 'styled-components'
+import { devices } from 'themes/devices'
 
 const ProcessContainer = styled.div`
   background: url('process1.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: 31.25rem;
+
+  @media ${devices.tablet} {
+    background: url('tabletProccess1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: 31.25rem;
+  }
 `
 
 const ItemsContainer = styled.div`

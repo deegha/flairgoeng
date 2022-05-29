@@ -1,6 +1,7 @@
 import { Process1, Process3 } from 'components'
 import { useApp } from 'context'
 import styled from 'styled-components'
+import { devices } from 'themes/devices'
 
 const TitleContainer = styled.h1`
   margin: 0;
@@ -14,6 +15,11 @@ const TitleContainer = styled.h1`
   position: relative;
   z-index: 2;
   color: ${({ theme }) => theme.color.text};
+
+  @media ${devices.tablet} {
+    font-size: 5.25rem;
+    line-height: 7rem;
+  }
 `
 
 const NeonLight1 = styled.div`
@@ -31,6 +37,14 @@ const NeonLight1 = styled.div`
   );
   filter: blur(200px);
   opacity: 0.6;
+
+  @media ${devices.tablet} {
+    width: 300px;
+    height: 300px;
+
+    left: 9%;
+    top: 94px;
+  }
 `
 
 const NeonLight2 = styled.div`
@@ -47,6 +61,14 @@ const NeonLight2 = styled.div`
   );
   filter: blur(200px);
   opacity: 0.6;
+
+  @media ${devices.tablet} {
+    width: 387px;
+    height: 387px;
+
+    left: 46%;
+    top: -192px;
+  }
 `
 
 const Container = styled.div`

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Navbar, Header } from 'components'
 import { useEffect, useState } from 'react'
 import { useScrollDirection } from 'react-use-scroll-direction'
+import { devices } from 'themes/devices'
 
 const Container = styled.div`
   display: flex;
@@ -18,6 +19,10 @@ const Container = styled.div`
 const Page = styled.div`
   max-width: 104.39rem;
   padding: 0 90px;
+
+  @media ${devices.tablet} {
+    padding: 0 30px;
+  }
 `
 
 interface IProps {

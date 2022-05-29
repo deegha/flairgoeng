@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import arrowDown from 'assets/arrowDown.svg'
+import { devices } from 'themes/devices'
 
 const ArrowContainer = styled.div`
   border-radius: 50%;
@@ -14,6 +15,14 @@ const ArrowContainer = styled.div`
   cursor: pointer;
   &: hover {
     transform: scale(1.04);
+  }
+
+  @media ${devices.tablet} {
+    width: 6.25rem;
+    height: 6.25rem;
+    span {
+      height: 50px !important;
+    }
   }
 `
 

@@ -1,12 +1,18 @@
 import { ServiceItem } from 'components'
 import styled from 'styled-components'
 import { useApp } from 'context'
+import { devices } from 'themes/devices'
 
 const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
   z-index: 2;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    margin: 16.5rem 0;
+  }
 `
 
 const ServicesContainer = styled.div``

@@ -45,6 +45,18 @@ const ServiceItemContainer = styled.div<{ selected: boolean }>`
       transform: translateY(-150px);
     }
   }
+
+  @media ${devices.tablet} {
+    width: 100%;
+    height: 100%;
+    margin: 1.5rem 0;
+
+    &:hover {
+      h2 {
+        transform: translateY(0px);
+      }
+    }
+  }
 `
 
 const ItemHeader = styled.h2`
@@ -62,6 +74,13 @@ const ItemHeader = styled.h2`
   @media ${devices.laptopL} {
     font-size: 3rem;
   }
+
+  @media ${devices.tablet} {
+    top: 0px;
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+  }
 `
 
 const ItemContent = styled.p`
@@ -77,6 +96,26 @@ const ItemContent = styled.p`
 
   @media ${devices.laptopL} {
     font-size: 1.8rem;
+  }
+
+  @media ${devices.tablet} {
+    display: none;
+  }
+`
+
+const ItemContentTablet = styled.p`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  display: none;
+  line-height: 2rem;
+
+  color: ${({ theme }) => theme.color.text};
+  margin: 0;
+  width: 100%;
+
+  @media ${devices.tablet} {
+    display: block;
   }
 `
 
@@ -98,6 +137,7 @@ export const ServiceItem: React.FunctionComponent<IProps> = ({
     >
       <ItemHeader>{title}</ItemHeader>
       {showConten && <ItemContent>{content}</ItemContent>}
+      <ItemContentTablet>{content}</ItemContentTablet>
     </ServiceItemContainer>
   )
 }

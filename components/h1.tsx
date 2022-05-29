@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { devices } from 'themes/devices'
 
 const H1Container = styled.h1`
   font-family: 'Questrial', sans-serif;
@@ -7,6 +8,11 @@ const H1Container = styled.h1`
   font-size: 4rem;
   line-height: 5.5rem;
   margin: 0;
+
+  @media ${devices.tablet} {
+    font-size: 2.625rem;
+    line-height: 56px;
+  }
 `
 
 interface IProp {
