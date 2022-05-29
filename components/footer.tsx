@@ -122,7 +122,11 @@ const BottomContainer = styled.div`
 `
 
 const FooterH3 = styled.h3`
-  font-size: 1 rem;
+  font-size: 2rem;
+
+  @media ${devices.tablet} {
+    font-size: 1rem;
+  }
 `
 
 const NeonLight = styled.div`
