@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Logo, H3, H5 } from 'components'
+import { Logo, H5 } from 'components'
 import Image from 'next/image'
 import upArrow from 'assets/upArrow.svg'
 import { devices } from 'themes/devices'
@@ -55,6 +55,7 @@ const LeftTop = styled.div`
 
 const LeftBottom = styled.div`
   padding-top: 8.313rem;
+  position: relative;
 `
 
 const ButtonContainer = styled.div`
@@ -98,6 +99,7 @@ const ItemText = styled.div`
 
 const Item = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: flex-end;
 
@@ -117,7 +119,52 @@ const BottomContainer = styled.div`
   margin: 10.125rem 0;
   border-top: 1px solid ${({ theme }) => theme.color.gray};
   color: ${({ theme }) => theme.color.gray};
-  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
+`
+
+const FooterH3 = styled.h3`
+  font-size: 1 rem;
+`
+
+const NeonLight = styled.div`
+  position: absolute;
+  width: 471.26px;
+  height: 471.26px;
+  left: -274px;
+  top: -132px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(58, 54, 255, 1),
+    rgba(58, 54, 255, 0)
+  );
+  -webkit-filter: blur(200px);
+  filter: blur(150px);
+  opacity: 0.6;
+  display: none;
+
+  @media ${devices.tablet} {
+    display: block;
+  }
+`
+
+const NeonLight2 = styled.div`
+  position: absolute;
+  width: 234.27px;
+  height: 234.27px;
+  left: 0;
+  top: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(131, 55, 255, 1),
+    rgba(131, 55, 255, 0)
+  );
+  -webkit-filter: blur(200px);
+  filter: blur(150px);
+  opacity: 0.6;
+  display: none;
+
+  @media ${devices.tablet} {
+    display: block;
+  }
 `
 
 export const Footer: React.FC = () => {
@@ -133,7 +180,8 @@ export const Footer: React.FC = () => {
             </TextContainer>
           </LeftTop>
           <LeftBottom>
-            <H3>hello@flairgolabs.com</H3>
+            <FooterH3>hello@flairgolabs.com</FooterH3>
+            <NeonLight />
           </LeftBottom>
         </LeftContainer>
         <RightContainer>
@@ -151,6 +199,7 @@ export const Footer: React.FC = () => {
               <ItemHeading>
                 <H5>Contact</H5>
               </ItemHeading>
+              <NeonLight2 />
               <ItemText>+74513645222</ItemText>
             </Item>
 

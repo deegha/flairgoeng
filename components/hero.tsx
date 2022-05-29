@@ -54,6 +54,7 @@ const IntroTextContainer = styled.div`
   font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;
+  top: 2rem;
 
   @media ${devices.laptopL} {
     font-size: 1.5rem;

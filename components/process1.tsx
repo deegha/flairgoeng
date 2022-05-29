@@ -12,7 +12,7 @@ const ProcessContainer = styled.div`
     background: url('tabletProccess1.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position-y: 31.25rem;
+    background-position-y: 24.25rem;
   }
 `
 
