@@ -170,7 +170,12 @@ export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
           ))}
         </Nav>
         <BtnContainer>
-          <Button onClick={() => console.log('Hello')} type={'primary'}>
+          <Button
+            type="primary"
+            onClick={() => {
+              window.open('https://calendly.com/flairgolabs/30min', '_blank')
+            }}
+          >
             HIRE US
           </Button>
         </BtnContainer>
