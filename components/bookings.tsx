@@ -1,9 +1,14 @@
 import { useApp } from 'context'
 import { Booking1, Booking2 } from 'components'
 import styled from 'styled-components'
+import { devices } from 'themes/devices'
 
 const BookingContainer = styled.div`
   padding-top: 25rem;
+
+  @media ${devices.tablet} {
+    padding-top: 12.5rem;
+  }
 `
 
 export const Bookings: React.FC = () => {

@@ -26,7 +26,7 @@ const ItemsContainer = styled.div`
 
 export const Process1: React.FC = () => {
   return (
-    <ProcessContainer>
+    <ProcessContainer id="process">
       <ItemsContainer>
         <ProcessItem
           Heading="Step 1"

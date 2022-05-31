@@ -28,7 +28,6 @@ const RightTextContainer = styled.div`
   font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;
-  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
   padding-top: 2rem;
   padding-bottom: 3.625rem;
 `

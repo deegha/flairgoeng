@@ -9,11 +9,16 @@ import vue from 'assets/vue.svg'
 import express from 'assets/express.svg'
 import firebase from 'assets/firebase.svg'
 import { H1, Button } from 'components'
+import { devices } from 'themes/devices'
 
 const BookingContainer = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 15.75rem;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+  }
 `
 
 const LeftContainer = styled.div`
@@ -24,11 +29,28 @@ const LeftContainer = styled.div`
   row-gap: 6.25rem;
   padding-right: 12.5rem;
   justify-content: space-between;
+  @media ${devices.tablet} {
+    width: 80%;
+    padding: 0;
+  }
 `
 
 const RightContainer = styled.div`
   width: 50%;
   color: ${({ theme }) => theme.color.text};
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 4.4rem;
+
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+    }
+  }
 `
 
 const RightTextContainer = styled.div`
@@ -36,9 +58,16 @@ const RightTextContainer = styled.div`
   font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;
-  font-feature-settings: 'salt' on, 'ss01' on, 'cv01' on;
   padding-top: 2rem;
   padding-bottom: 3.625rem;
+
+  @media ${devices.tablet} {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: ${({ theme }) => theme.color.textAlt};
+    width: 71%;
+  }
 `
 
 const BookingLogoContainer = styled.div`
