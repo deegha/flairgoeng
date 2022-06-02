@@ -13,7 +13,7 @@ interface IProps {
 
 const slideIn = keyframes`
   0% {
-    transform: translateY(130px);
+    transform: translateY(180px);
     opacity: 0;
   }
 
@@ -42,7 +42,7 @@ const ServiceItemContainer = styled.div<{ selected: boolean }>`
 
   &:hover {
     h2 {
-      transform: translateY(-150px);
+      transform: translateY(-180px);
     }
   }
 
@@ -87,7 +87,7 @@ const ItemContent = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;
-
+  line-height: 48px;
   animation-name: ${slideIn};
   animation-duration: 0.7s;
 
