@@ -30,5 +30,5 @@ export const Bookings: React.FC = () => {
     }
   }
 
-  return <BookingContainer>{getBooking()}</BookingContainer>
+  return <BookingContainer id="contact">{getBooking()}</BookingContainer>
 }

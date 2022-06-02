@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Logo, H5 } from 'components'
+import { Logo, H5, scroll } from 'components'
 import Image from 'next/image'
 import upArrow from 'assets/upArrow.svg'
 import { devices } from 'themes/devices'
-import sideArrow from 'assets/sideArrow.svg'
+// import sideArrow from 'assets/sideArrow.svg'
 
 const FooterContainer = styled.div`
   padding-top: 9.625rem;
@@ -69,14 +69,14 @@ const ButtonContainer = styled.div`
   align-items: center;
   cursor: pointer;
 `
-const SideArrowContainer = styled.div`
-  cursor: pointer;
-  transition: transform 0.5s;
-  transition-timing-function: ease-out;
-  &:hover {
-    transform: translateX(10px);
-  }
-`
+// const SideArrowContainer = styled.div`
+//   cursor: pointer;
+//   transition: transform 0.5s;
+//   transition-timing-function: ease-out;
+//   &:hover {
+//     transform: translateX(10px);
+//   }
+// `
 
 const RightTop = styled.div`
   display: flex;
@@ -196,19 +196,15 @@ export const Footer: React.FC = () => {
             </TextContainer>
           </LeftTop>
           <LeftBottom>
-            <FooterH3>hello@flairgolabs.com</FooterH3>
+            <FooterH3>team@flairgolabs.com</FooterH3>
             <NeonLight />
-
-            <SideArrowContainer>
-              <Image layout="fixed" src={sideArrow} alt="Side Arrow" />
-            </SideArrowContainer>
           </LeftBottom>
         </LeftContainer>
         <RightContainer>
           <RightTop>
             <ButtonContainer>
               <Image layout="fixed" src={upArrow} alt="Up Arrow"></Image>
-              <BtnTextContainer>
+              <BtnTextContainer onClick={() => scroll('hero')}>
                 <H5>Back to top</H5>
               </BtnTextContainer>
             </ButtonContainer>
@@ -228,10 +224,22 @@ export const Footer: React.FC = () => {
                 <H5>Socials</H5>
               </ItemHeading>
               <ItemText>
-                <a href="">LinkedIn</a>
+                <a
+                  href="https://www.linkedin.com/company/flairgo-labs"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
               </ItemText>
               <ItemText>
-                <a href="">Twitter</a>
+                <a
+                  href="https://twitter.com/flairgolabs"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Twitter
+                </a>
               </ItemText>
             </Item>
 

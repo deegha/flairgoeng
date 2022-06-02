@@ -136,15 +136,15 @@ const links: Array<IPage> = [
   },
 ]
 
+export const scroll = (url: string) => {
+  const section = document.querySelector(`#${url}`)
+  if (!section) return
+  section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
 export const Navbar: React.FunctionComponent<IProps> = ({ hide }) => {
   const [selectedSection, selectSection] = useState<string>('')
   const [mobileNav, setMobileNav] = useState<boolean>(false)
-
-  const scroll = (url: string) => {
-    const section = document.querySelector(`#${url}`)
-    if (!section) return
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
 
   const handleClickNavItem = (url: string) => {
     selectSection(url)
