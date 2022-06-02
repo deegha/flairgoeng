@@ -1,5 +1,5 @@
 export { Header } from './header'
-export { Navbar } from './navBar'
+export { Navbar, scroll } from './navBar'
 export { Layout } from './layout'
 export { Button } from './button'
 export { TextInput } from './textInput'

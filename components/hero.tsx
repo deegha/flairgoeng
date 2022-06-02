@@ -105,7 +105,7 @@ const ImageContainer = styled.div`
 
 export const Hero: React.FC = () => {
   return (
-    <HeroContainer>
+    <HeroContainer id="hero">
       <LeftContainer>
         <HeaderContainer>
           <H1>React and React Native Development Experts</H1>
